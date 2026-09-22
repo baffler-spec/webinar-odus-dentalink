@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Webinar IA para clínicas · ODUS × Dentalink</title>
+<meta name="description" content="Webinar en vivo, 8 de octubre de 2026, 18:00 h (CDMX). Alejandro y Carlos Cardini explican cómo generar tráfico de pacientes y citas a tu clínica con IA. Registro gratuito.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Genera tráfico de pacientes y citas a tu clínica con IA">
+<meta property="og:description" content="Webinar en vivo · 8 de octubre · 18:00 h CDMX. Registro gratuito.">
+<meta property="og:image" content="assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#FFFEFA">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFEFA;
+    --ink: #13151B;
+    --ink-2: #3A3D46;
+    --muted: #6B6F7A;
+    --line: #D9DBE1;
+    --blue: #0823CD;
+    --blue-2: #0059DB;
+    --coral: #FF5A5F;
+    --card: #FFFFFF;
+    --error: #D0263A;
+    --ok: #0E7A45;
+    --radius: 18px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; height: auto; }
+  a { color: var(--blue); }
+
+  .wrap { width: min(1180px, 100% - 32px); margin-inline: auto; }
+
+  /* Logos */
+  .brands {
+    display: flex; align-items: center; justify-content: center;
+    gap: clamp(16px, 3vw, 32px);
+    padding: clamp(22px, 4vw, 36px) 0 clamp(18px, 3vw, 28px);
+  }
+  .brands img { height: clamp(34px, 5.2vw, 58px); width: auto; }
+  .brands .dl { height: clamp(36px, 5.6vw, 64px); transform: translateY(-4%); }
+  .brands .sep { width: 2px; align-self: stretch; background: #BFC2CA; max-height: 64px; margin-block: auto; height: clamp(40px,6vw,70px); }
+
+  /* Hero grid */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    grid-template-areas: "copy form" "people form";
+    grid-template-rows: auto 1fr;
+    column-gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+  }
+  .copy { grid-area: copy; text-align: center; }
+  .people { grid-area: people; align-self: end; }
+  .form-col { grid-area: form; position: sticky; top: 24px; }
+
+  .badge {
+    display: inline-block;
+    background: var(--coral); color: #fff;
+    font-weight: 800; font-size: clamp(14px, 1.7vw, 20px); letter-spacing: .02em;
+    padding: 6px 26px 7px; border-radius: 999px;
+    margin: 0 0 14px;
+  }
+  h1 {
+    margin: 0;
+    font-weight: 800;
+    font-size: clamp(40px, 6.4vw, 76px);
+    line-height: .98;
+    letter-spacing: -0.045em;
+    text-wrap: balance;
+  }
+  h1 .blue { color: var(--blue); display: block; }
+  .sub {
+    margin: 12px 0 0;
+    font-size: clamp(20px, 2.6vw, 31px);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .when {
+    display: inline-flex; align-items: center; gap: 14px;
+    margin-top: 18px;
+    color: var(--blue);
+    font-size: clamp(19px, 2.5vw, 29px);
+    font-weight: 800; letter-spacing: -0.02em;
+  }
+  .when svg { width: 1.6em; height: 1.6em; flex: none; }
+  .when .tz { font-weight: 600; }
+
+  /* Speakers */
+  .people {
+    position: relative;
+    margin-top: clamp(16px, 2.5vw, 28px);
+  }
+  .people img { width: 100%; }
+  .people .names {
+    position: absolute; left: 0; right: 0; bottom: clamp(18px, 3vw, 30px);
+    text-align: center; color: #fff;
+    text-shadow: 0 2px 16px rgba(0,0,0,.55);
+  }
+  .people .names strong {
+    display: block;
+    font-size: clamp(22px, 3vw, 36px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1;
+  }
+  .people .names span { font-size: clamp(15px, 1.9vw, 23px); font-weight: 500; }
+
+  /* Form card */
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 1px 2px rgba(19,21,27,.04), 0 12px 40px rgba(19,21,27,.07);
+    padding: clamp(24px, 3vw, 38px);
+    margin-top: 16px;
+  }
+  .card h2 {
+    margin: 0; text-align: center;
+    font-size: clamp(26px, 2.9vw, 36px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.1;
+  }
+  .card .date {
+    margin: 6px 0 22px; text-align: center; color: var(--blue);
+    font-weight: 700; font-size: clamp(17px, 1.8vw, 21px); letter-spacing: -0.01em;
+  }
+  .field { margin-bottom: 18px; }
+  label.lbl { display: block; font-weight: 600; font-size: 16px; margin-bottom: 7px; }
+  .input {
+    width: 100%;
+    font: inherit; font-size: 16px; color: var(--ink);
+    background: #fff;
+    border: 1.5px solid var(--line); border-radius: 10px;
+    padding: 13px 16px;
+    transition: border-color .15s, box-shadow .15s;
+    appearance: none;
+  }
+  .input::placeholder { color: #9A9EA8; }
+  .input:hover { border-color: #BFC2CA; }
+  .input:focus { outline: none; border-color: var(--blue); box-shadow: 0 0 0 4px rgba(8,35,205,.14); }
+  .select-wrap { position: relative; }
+  .select-wrap svg { position: absolute; right: 16px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); pointer-events: none; color: var(--ink-2); }
+  select.input { padding-right: 44px; cursor: pointer; }
+  select.input:invalid { color: #9A9EA8; }
+  select.input option { color: var(--ink); }
+  .field.has-error .input { border-color: var(--error); }
+  .field.has-error .input:focus { box-shadow: 0 0 0 4px rgba(208,38,58,.14); }
+  .err { display: none; color: var(--error); font-size: 13.5px; margin-top: 6px; font-weight: 500; }
+  .field.has-error .err { display: block; }
+
+  .check { display: flex; gap: 12px; align-items: flex-start; font-size: 15px; color: var(--ink-2); cursor: pointer; }
+  .check input {
+    appearance: none; flex: none; margin: 0;
+    width: 22px; height: 22px; border: 1.5px solid #9A9EA8; border-radius: 5px; background: #fff;
+    display: grid; place-content: center; cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  .check input::after {
+    content: ""; width: 11px; height: 6px; border: 2.5px solid #fff; border-top: 0; border-right: 0;
+    transform: rotate(-45deg) translate(1px, -1px) scale(0); transition: transform .12s;
+  }
+  .check input:checked { background: var(--blue); border-color: var(--blue); }
+  .check input:checked::after { transform: rotate(-45deg) translate(1px, -1px) scale(1); }
+  .check input:focus-visible { outline: 3px solid rgba(8,35,205,.35); outline-offset: 2px; }
+  .check span { padding-top: 1px; }
+  .field.has-error .check input { border-color: var(--error); }
+
+  .btn {
+    width: 100%; margin-top: 22px;
+    font: inherit; font-size: clamp(18px, 1.9vw, 22px); font-weight: 800; letter-spacing: -0.01em;
+    color: #fff; background: var(--blue);
+    border: 0; border-radius: 12px;
+    padding: 16px 20px; min-height: 58px;
+    cursor: pointer;
+    transition: background .15s, transform .1s, box-shadow .15s;
+    box-shadow: 0 6px 18px rgba(8,35,205,.25);
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .btn:hover { background: #061BAA; }
+  .btn:active { transform: translateY(1px); }
+  .btn:focus-visible { outline: 3px solid rgba(8,35,205,.4); outline-offset: 3px; }
+  .btn[disabled] { opacity: .75; cursor: progress; }
+  .spinner { width: 20px; height: 20px; border: 2.5px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; display: none; }
+  .btn.loading .spinner { display: block; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .fineprint { text-align: center; color: var(--ink-2); font-size: 15px; margin: 14px 0 0; }
+  .form-alert { display: none; margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: #FDECEE; color: var(--error); font-size: 14.5px; font-weight: 500; }
+  .form-alert.show { display: block; }
+  .demo-note { margin-top: 12px; font-size: 12.5px; color: #9A5B00; background: #FFF4DE; border-radius: 8px; padding: 8px 10px; text-align: center; }
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  /* Success */
+  .success { display: none; text-align: center; }
+  .card.done form { display: none; }
+  .card.done .success { display: block; }
+  .success .tick { width: 64px; height: 64px; margin: 4px auto 16px; border-radius: 50%; background: #E7F6EE; color: var(--ok); display: grid; place-items: center; }
+  .success .tick svg { width: 32px; height: 32px; }
+  .success h3 { margin: 0; font-size: 28px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.15; }
+  .success p { margin: 10px 0 0; color: var(--ink-2); }
+  .success .when-box { margin: 20px 0 6px; padding: 14px; border-radius: 12px; background: #F1F3FE; color: var(--blue); font-weight: 700; }
+  .cal { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
+  .cal a {
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 10px; border-radius: 10px; border: 1.5px solid var(--line);
+    font-weight: 700; font-size: 15px; color: var(--ink); text-decoration: none;
+    transition: border-color .15s, background .15s;
+  }
+  .cal a:hover { border-color: var(--blue); background: #F7F8FF; }
+
+  /* Bottom */
+  .closing { position: relative; text-align: center; padding: clamp(48px, 7vw, 80px) 0 clamp(64px, 9vw, 110px); overflow: hidden; }
+  .closing h2 {
+    margin: 0; font-size: clamp(34px, 5vw, 60px); font-weight: 800; letter-spacing: -0.045em; line-height: 1.02;
+  }
+  .closing h2 span { color: var(--blue); }
+  .closing p { max-width: 36em; margin: 16px auto 0; font-size: clamp(17px, 1.9vw, 22px); color: var(--ink-2); }
+  .closing .cta-mobile { display: none; }
+  .ribbon { position: absolute; bottom: 0; width: clamp(150px, 22vw, 300px); height: auto; pointer-events: none; }
+  .ribbon.l { left: 0; }
+  .ribbon.r { right: 0; transform: scaleX(-1); }
+  .closing .wrap { position: relative; z-index: 1; }
+
+  footer { border-top: 1px solid #ECEDF0; padding: 20px 0 28px; text-align: center; font-size: 13.5px; color: var(--muted); }
+  footer a { color: inherit; }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "copy" "form" "people"; grid-template-rows: auto; }
+    .form-col { position: static; }
+    .card { margin-top: 26px; }
+    .people { margin-top: 36px; }
+    .closing .cta-mobile { display: inline-flex; width: auto; padding-inline: 32px; margin-top: 26px; text-decoration: none; }
+  }
+  @media (max-width: 480px) {
+    .brands .sep { height: 34px; }
+    .when { gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .when svg { display: none; }
+    .ribbon { width: 110px; opacity: .9; }
+    .cal { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+
+<header class="wrap brands">
+  <img src="assets/odus.webp" alt="ODUS" width="560" height="134">
+  <span class="sep" aria-hidden="true"></span>
+  <img class="dl" src="assets/dentalink.webp" alt="Dentalink" width="560" height="123">
+</header>
+
+<main class="wrap hero">
+  <section class="copy">
+    <p class="badge">WEBINAR EN VIVO</p>
+    <h1>Genera tráfico <span class="blue">de pacientes y citas a tu clínica</span></h1>
+    <p class="sub">Descubre cómo lograrlo con IA</p>
+    <p class="when">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><rect x="3.5" y="6" width="25" height="23" rx="4"/><path d="M3.5 13h25M10 3v6M22 3v6"/></svg>
+      <span>8 octubre 2026 · 18:00 h · <span class="tz">Hora CDMX</span></span>
+    </p>
+  </section>
+
+  <section class="people" aria-label="Ponentes">
+    <img src="assets/ponentes.webp" width="1100" height="530" alt="Alejandro y Carlos Cardini" loading="lazy">
+    <div class="names">
+      <strong>Alejandro y Carlos Cardini</strong>
+      <span>Fundadores de Konfront</span>
+    </div>
+  </section>
+
+  <aside class="form-col" id="registro">
+    <div class="card" id="card">
+      <h2>Regístrate al webinar</h2>
+      <p class="date">8 octubre · 18:00 h · Hora CDMX</p>
+
+      <form id="form" novalidate>
+        <div class="field" data-field="nombre">
+          <label class="lbl" for="nombre">Nombre completo</label>
+          <input class="input" id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre completo" required maxlength="120">
+          <div class="err" id="nombre-err">Escribe tu nombre completo.</div>
+        </div>
+        <div class="field" data-field="email">
+          <label class="lbl" for="email">Correo electrónico</label>
+          <input class="input" id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="tu@correo.com" required maxlength="160">
+          <div class="err" id="email-err">Escribe un correo válido.</div>
+        </div>
+        <div class="field" data-field="clinica">
+          <label class="lbl" for="clinica">Clínica o consultorio</label>
+          <input class="input" id="clinica" name="clinica" type="text" autocomplete="organization" placeholder="Nombre de tu clínica o consultorio" required maxlength="160">
+          <div class="err" id="clinica-err">Escribe el nombre de tu clínica o consultorio.</div>
+        </div>
+        <div class="field" data-field="cargo">
+          <label class="lbl" for="cargo">Cargo</label>
+          <div class="select-wrap">
+            <select class="input" id="cargo" name="cargo" required>
+              <option value="" disabled selected>Selecciona tu cargo</option>
+              <option>Dueño(a) / Director(a) de clínica</option>
+              <option>Odontólogo(a)</option>
+              <option>Gerente / Administrador(a)</option>
+              <option>Recepción / Coordinación de citas</option>
+              <option>Marketing</option>
+              <option>Otro</option>
+            </select>
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7.5l5 5 5-5"/></svg>
+          </div>
+          <div class="err" id="cargo-err">Selecciona tu cargo.</div>
+        </div>
+        <div class="field" data-field="privacidad">
+          <label class="check">
+            <input type="checkbox" id="privacidad" name="privacidad" required>
+            <span>He leído el <a id="privacy-link" href="#" target="_blank" rel="noopener">aviso de privacidad</a></span>
+          </label>
+          <div class="err" id="privacidad-err">Necesitas aceptar el aviso de privacidad.</div>
+        </div>
+
+        <div class="hp" aria-hidden="true">
+          <label for="website">No llenar</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="btn" type="submit" id="submit">
+          <span class="spinner" aria-hidden="true"></span>
+          <span class="btn-label">Reservar mi acceso</span>
+        </button>
+        <div class="form-alert" id="alert" role="alert"></div>
+        <p class="fineprint">Abierto al público con preregistro</p>
+        <div class="demo-note" id="demo-note" hidden>Modo demo: los registros no se guardan. Configura <code>ENDPOINT</code> en index.html.</div>
+      </form>
+
+      <div class="success" id="success" tabindex="-1" aria-live="polite">
+        <div class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
+        <h3 id="success-title">¡Tu lugar está reservado!</h3>
+        <p id="success-msg">Te enviaremos el enlace de acceso al webinar a tu correo.</p>
+        <div class="when-box">Jueves 8 de octubre · 18:00 h · Hora CDMX</div>
+        <div class="cal">
+          <a id="cal-google" href="#" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+            Google Calendar
+          </a>
+          <a id="cal-ics" href="#" download="webinar-odus-dentalink.ics">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+            Outlook / Apple
+          </a>
+        </div>
+      </div>
+    </div>
+  </aside>
+</main>
+
+<section class="closing">
+  <svg class="ribbon l" viewBox="0 0 300 200" fill="none" aria-hidden="true">
+    <path d="M-20 70 C 60 60, 120 110, 170 210" stroke="#FF5A5F" stroke-width="34" stroke-linecap="butt"/>
+    <path d="M-20 150 C 60 90, 170 100, 250 210" stroke="#0823CD" stroke-width="34" stroke-linecap="butt"/>
+  </svg>
+  <svg class="ribbon r" viewBox="0 0 300 200" fill="none" aria-hidden="true">
+    <path d="M-20 70 C 60 60, 120 110, 170 210" stroke="#FF5A5F" stroke-width="34" stroke-linecap="butt"/>
+    <path d="M-20 150 C 60 90, 170 100, 250 210" stroke="#0823CD" stroke-width="34" stroke-linecap="butt"/>
+  </svg>
+  <div class="wrap">
+    <h2>IA para <span>impulsar tu clínica</span></h2>
+    <p>Acompaña a Alejandro y Carlos Cardini en una conversación sobre inteligencia artificial, pacientes y crecimiento.</p>
+    <a class="btn cta-mobile" href="#registro">Reservar mi acceso</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 ODUS × Dentalink · <a id="privacy-link-2" href="#" target="_blank" rel="noopener">Aviso de privacidad</a></div>
+</footer>
+
+<script>
+/* ─── CONFIGURACIÓN ─────────────────────────────────────────────
+   ENDPOINT: URL de la aplicación web de Google Apps Script
+   (termina en /exec). Ver LEEME.md.                              */
+const CONFIG = {
+  ENDPOINT: '',
+  PRIVACY_URL: '#',
+  EVENT: {
+    title: 'Webinar ODUS × Dentalink: Genera tráfico de pacientes y citas con IA',
+    details: 'Webinar en vivo con Alejandro y Carlos Cardini, fundadores de Konfront. El enlace de acceso llegará a tu correo.',
+    // 8 oct 2026 18:00 CDMX (UTC-6) = 9 oct 00:00 UTC. Duración: 1 h.
+    startUTC: '20261009T000000Z',
+    endUTC: '20261009T010000Z'
+  }
+};
+/* ──────────────────────────────────────────────────────────── */
+
+(function () {
+  const form = document.getElementById('form');
+  const card = document.getElementById('card');
+  const btn = document.getElementById('submit');
+  const alertBox = document.getElementById('alert');
+  const fields = ['nombre', 'email', 'clinica', 'cargo', 'privacidad'];
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  document.getElementById('privacy-link').href = CONFIG.PRIVACY_URL;
+  document.getElementById('privacy-link-2').href = CONFIG.PRIVACY_URL;
+  if (!CONFIG.ENDPOINT) document.getElementById('demo-note').hidden = false;
+
+  // Calendar links
+  const e = CONFIG.EVENT;
+  document.getElementById('cal-google').href =
+    'https://calendar.google.com/calendar/render?action=TEMPLATE' +
+    '&text=' + encodeURIComponent(e.title) +
+    '&dates=' + e.startUTC + '/' + e.endUTC +
+    '&details=' + encodeURIComponent(e.details) +
+    '&ctz=America/Mexico_City';
+  const ics = [
+    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//ODUS Dentalink//Webinar//ES', 'BEGIN:VEVENT',
+    'UID:webinar-odus-dentalink-20261008@odus', 'DTSTAMP:20260922T000000Z',
+    'DTSTART:' + e.startUTC, 'DTEND:' + e.endUTC,
+    'SUMMARY:' + e.title, 'DESCRIPTION:' + e.details,
+    'BEGIN:VALARM', 'TRIGGER:-PT30M', 'ACTION:DISPLAY', 'DESCRIPTION:El webinar empieza en 30 minutos', 'END:VALARM',
+    'END:VEVENT', 'END:VCALENDAR'
+  ].join('\r\n');
+  document.getElementById('cal-ics').href = 'data:text/calendar;charset=utf-8,' + encodeURIComponent(ics);
+
+  function validate(name) {
+    const el = form.elements[name];
+    let ok;
+    if (name === 'privacidad') ok = el.checked;
+    else if (name === 'email') ok = emailRe.test(el.value.trim());
+    else if (name === 'nombre') ok = el.value.trim().length >= 3;
+    else ok = el.value.trim().length > 0;
+    const wrap = form.querySelector('[data-field="' + name + '"]');
+    wrap.classList.toggle('has-error', !ok);
+    el.setAttribute('aria-invalid', String(!ok));
+    if (!ok) el.setAttribute('aria-describedby', name + '-err'); else el.removeAttribute('aria-describedby');
+    return ok;
+  }
+
+  fields.forEach(function (name) {
+    const el = form.elements[name];
+    const evt = (name === 'privacidad' || name === 'cargo') ? 'change' : 'blur';
+    el.addEventListener(evt, function () { validate(name); });
+    el.addEventListener('input', function () {
+      if (form.querySelector('[data-field="' + name + '"]').classList.contains('has-error')) validate(name);
+    });
+  });
+
+  function utm() {
+    const p = new URLSearchParams(location.search);
+    const out = {};
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (k) { out[k] = p.get(k) || ''; });
+    return out;
+  }
+
+  function setLoading(on) {
+    btn.disabled = on;
+    btn.classList.toggle('loading', on);
+    btn.querySelector('.btn-label').textContent = on ? 'Reservando…' : 'Reservar mi acceso';
+  }
+
+  function showSuccess(duplicate) {
+    if (duplicate) {
+      document.getElementById('success-title').textContent = 'Ya estabas registrado';
+      document.getElementById('success-msg').textContent = 'Tu lugar sigue reservado con este correo. El enlace de acceso llegará a tu bandeja.';
+    }
+    card.classList.add('done');
+    const s = document.getElementById('success');
+    s.focus({ preventScroll: true });
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (window.dataLayer) window.dataLayer.push({ event: 'webinar_registro' });
+    if (window.fbq) window.fbq('track', 'CompleteRegistration');
+    if (window.gtag) window.gtag('event', 'sign_up', { method: 'webinar' });
+  }
+
+  form.addEventListener('submit', async function (ev) {
+    ev.preventDefault();
+    alertBox.classList.remove('show');
+    const results = fields.map(validate);
+    if (results.includes(false)) {
+      form.elements[fields[results.indexOf(false)]].focus();
+      return;
+    }
+
+    const data = Object.assign({
+      nombre: form.elements.nombre.value.trim(),
+      email: form.elements.email.value.trim().toLowerCase(),
+      clinica: form.elements.clinica.value.trim(),
+      cargo: form.elements.cargo.value,
+      privacidad: 'si',
+      website: form.elements.website.value,
+      page: location.href.split('#')[0]
+    }, utm());
+
+    if (!CONFIG.ENDPOINT) {
+      console.warn('[Modo demo] ENDPOINT vacío. Registro no guardado:', data);
+      showSuccess(false);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const res = await fetch(CONFIG.ENDPOINT, { method: 'POST', body: new URLSearchParams(data) });
+      const json = await res.json();
+      if (!json.ok) throw new Error(json.error || 'Error');
+      showSuccess(json.duplicate);
+    } catch (err) {
+      console.error(err);
+      alertBox.textContent = 'No pudimos guardar tu registro. Revisa tu conexión e inténtalo de nuevo.';
+      alertBox.classList.add('show');
+    } finally {
+      setLoading(false);
+    }
+  });
+})();
+</script>
+</body>
+</html>
